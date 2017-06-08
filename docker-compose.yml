@@ -1,0 +1,12 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    environment: 
+      - HOST_URL=http://myserver:49160
+    ports:
+      - "49160:3000"
